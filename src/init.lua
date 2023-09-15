@@ -239,12 +239,20 @@ export type PloderBehavior = {
 	BlastPressurePercent: number?,
 	AffectBlastPressureDistance: boolean,
 	CustomExplosion: (Folder | { ParticleEmitter })?,
-	AutoDestroy: number?
+	AutoDestroy: number?,
 }
 
-local function ApplyPressure(Hit: BasePart, Direction: Vector3, Percentage: number, self: Ploder, Behavior: PloderBehavior)
+local function ApplyPressure(
+	Hit: BasePart,
+	Direction: Vector3,
+	Percentage: number,
+	self: Ploder,
+	Behavior: PloderBehavior
+)
 	if not Hit.Anchored then
-		local Blast = Direction * self.BlastPressure * if Behavior and Behavior.AffectBlastPressureDistance then Percentage else 1
+		local Blast = Direction
+			* self.BlastPressure
+			* if Behavior and Behavior.AffectBlastPressureDistance then Percentage else 1
 
 		if Hit:GetNetworkOwner() and #Hit:GetJoints() == 0 then
 			Hit:SetNetworkOwner(nil)
@@ -294,7 +302,7 @@ function Ploder.newBehavior(): PloderBehavior
 		BlastPressurePercent = nil,
 		AffectBlastPressureDistance = false,
 		CustomExplosion = nil,
-		AutoDestroy = nil
+		AutoDestroy = nil,
 	}
 end
 
@@ -336,9 +344,9 @@ function Ploder.Explode(self: Ploder, Behavior: PloderBehavior?)
 			if Behavior.HumanoidOnly and Hit.Name ~= "HumanoidRootPart" then
 				continue
 			end
-            if Behavior.Filter and not Behavior.Filter(Hit, Magnitude) then
-                continue
-            end
+			if Behavior.Filter and not Behavior.Filter(Hit, Magnitude) then
+				continue
+			end
 		end
 
 		if Percentage <= self.DestroyJointRadiusPercent then
@@ -359,7 +367,9 @@ function Ploder.Explode(self: Ploder, Behavior: PloderBehavior?)
 
 	if self.Visible then
 		if CustomExplosion then
-			local Particles: { Particle: ParticleEmitter } = if typeof(Behavior.CustomExplosion) == "Instance" then Behavior.CustomExplosion:GetChildren() else Behavior.CustomExplosion
+			local Particles: { Particle: ParticleEmitter } = if typeof(Behavior.CustomExplosion) == "Instance"
+				then Behavior.CustomExplosion:GetChildren()
+				else Behavior.CustomExplosion
 			local Attachment = self._Trove:Add(Instance.new("Attachment"))
 
 			Attachment.Parent = workspace.Terrain
@@ -422,7 +432,10 @@ function Ploder.CalculateDamage(self: Ploder, Position: BasePart | Vector3, Dama
 	assert(typeof(Damage) == "NumberRange", "Damage must be a NumberRange")
 
 	local TargetType: string = typeof(Position)
-	assert((TargetType == "Instance" and Position:IsA("BasePart")) or TargetType == "Vector3", "Please provide a BasePart or Vector3")
+	assert(
+		(TargetType == "Instance" and Position:IsA("BasePart")) or TargetType == "Vector3",
+		"Please provide a BasePart or Vector3"
+	)
 
 	local Target: Vector3 = if TargetType == "Instance" then Position.Position else Position
 	local Magnitude: number = (self.Position - Target).Magnitude
