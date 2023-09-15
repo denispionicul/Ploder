@@ -1,3 +1,6 @@
+title = "Ploder"
+gitRepoUrl = "https://github.com/denispionicul/Ploder" # From Git
+
 gitSourceBranch = "main"
 
 [home]
