@@ -5,8 +5,5 @@ enabled = true
 includeReadme = false # Optional
 
 [docusaurus]
-organizationName = "denispionicul"
-projectName = "Ploder"
-url = "https://denispionicul.github.io"
-baseUrl = "/Ploder"
 tagline = "Custom Explosions made easy."
+url = "https://denispionicul.github.io"
