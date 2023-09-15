@@ -1,0 +1,8 @@
+gitSourceBranch = "main"
+
+[home]
+enabled = true
+includeReadme = false # Optional
+
+[docusaurus]
+tagline = "Custom Explosions made easy."
