@@ -10,6 +10,7 @@ Explosion.DestroyJointRadiusPercent = 1
 local Behavior = Ploder.newBehavior()
 
 Behavior.AffectBlastPressureDistance = true
+Behavior.CustomExplosion = workspace.Particles
 
 Explosion.Hit:Connect(function(Hit: BasePart)
     print(Hit.Name .. " got hit")

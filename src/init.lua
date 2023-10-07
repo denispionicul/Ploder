@@ -1,5 +1,5 @@
 --!nonstrict
---Version 1.0.0
+--Version 1.1.0
 
 -- Settings
 local Debug = true
@@ -171,7 +171,8 @@ Ploder.__index = Ploder
 	@within PloderBehavior
 
 	If a Folder or an array of ParticleEmitters is set, they will be visualised when the explosion occurs.
-	The particles inside the folder/array MUST have an attribute called "Count" with the value being the amount of particles to emit on explosion.
+	The particles inside the folder/array will need to have an attribute called "Count" with the value being the amount of particles to emit on explosion.
+	The paticles will need to have an attribute callde "EmitTime" which will disable the particle emitter after the set attribute value.
 ]=]
 --[=[
 	@prop AutoDestroy number
@@ -264,6 +265,21 @@ local function ApplyPressure(
 
 		Hit:ApplyImpulse(Blast)
 	end
+end
+
+local function GetLifetime(Particles: {ParticleEmitter}): number
+	local Time = 0
+
+	for _, Particle: ParticleEmitter in pairs(Particles) do
+		local EmitTime = Particle:GetAttribute("EmitTime")
+		local Lifetime = Particle.Lifetime.Max + (EmitTime or 0)
+
+		if Lifetime > Time then
+			Time = Lifetime
+		end
+	end
+
+	return Time
 end
 
 --[=[
@@ -377,12 +393,23 @@ function Ploder.Explode(self: Ploder, Behavior: PloderBehavior?)
 
 			for _, Particle: ParticleEmitter in pairs(Particles) do
 				local Clone = Particle:Clone()
+				local Count = Clone:GetAttribute("Count")
+				local EmitTime = Clone:GetAttribute("EmitTime")
 
 				Clone.Parent = Attachment
-				Clone:Emit(Clone:GetAttribute("Count") or 1)
+				Clone.Enabled = true
+
+				if Count then
+					Clone:Emit(Count or 1)
+				end
+				if EmitTime then
+					task.delay(EmitTime or 1, function()
+						Clone.Enabled = false
+					end)
+				end
 			end
 
-			Debris:AddItem(Attachment, 30)
+			Debris:AddItem(Attachment, GetLifetime(Particles))
 		else
 			local Ex = Instance.new("Explosion")
 
@@ -407,7 +434,7 @@ function Ploder.Explode(self: Ploder, Behavior: PloderBehavior?)
 		local Part = self._Trove:Add(Instance.new("Part"))
 		Part.Anchored = true
 		Part.CanCollide = false
-		Part.Size = Vector3.new(self.BlastRadius, self.BlastRadius, self.BlastRadius)
+		Part.Size = Vector3.new(self.BlastRadius, self.BlastRadius, self.BlastRadius) * 2
 		Part.Shape = Enum.PartType.Ball
 		Part.Transparency = 0.5
 		Part.BrickColor = BrickColor.new("Really red")

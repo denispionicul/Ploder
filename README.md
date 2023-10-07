@@ -11,7 +11,7 @@ There are 4 **main** ways to download Ploder:
 
 * Add it to your [Wally](https://wally.run/) dependencies.
 ```
-denispionicul/ploder@1.0.0
+denispionicul/ploder@1.1.0
 ```
 * Get the Roblox file in [Releases](https://github.com/denispionicul/Ploder/releases) and add it in your Roblox Studio.
 
