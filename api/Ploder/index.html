@@ -24,8 +24,8 @@ local Explosion = Ploder.new()
 
 On its own, the constructor and ploder for that matter functions exactly like the normal [Explosion](https://create.roblox.com/docs/reference/engine/classes/Explosion).
 We will get to the custom features later."><link data-rh="true" rel="canonical" href="https://denispionicul.github.io/Ploder/api/Ploder"><link data-rh="true" rel="alternate" href="https://denispionicul.github.io/Ploder/api/Ploder" hreflang="en"><link data-rh="true" rel="alternate" href="https://denispionicul.github.io/Ploder/api/Ploder" hreflang="x-default"><link rel="stylesheet" href="/Ploder/assets/css/styles.e1adec2f.css">
-<link rel="preload" href="/Ploder/assets/js/runtime~main.fd64b82d.js" as="script">
-<link rel="preload" href="/Ploder/assets/js/main.a51376ea.js" as="script">
+<link rel="preload" href="/Ploder/assets/js/runtime~main.ef0a5e84.js" as="script">
+<link rel="preload" href="/Ploder/assets/js/main.076b3fad.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -42,7 +42,7 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
   On its own, the constructor and ploder for that matter functions exactly like the normal <a href="https://create.roblox.com/docs/reference/engine/classes/Explosion" target="_blank">Explosion</a>.
   We will get to the custom features later.
 </p>
-</div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="types">Types<a href="#types" class="hash-link" aria-label="Direct link to Types" title="Direct link to Types">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Ploder"><code style="text-decoration:none">Ploder</code><a href="#Ploder" class="hash-link" aria-label="Direct link to Ploder" title="Direct link to Ploder">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L201"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>Ploder<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>BlastPressure<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+</div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="types">Types<a href="#types" class="hash-link" aria-label="Direct link to Types" title="Direct link to Types">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Ploder"><code style="text-decoration:none">Ploder</code><a href="#Ploder" class="hash-link" aria-label="Direct link to Ploder" title="Direct link to Ploder">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L218"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>Ploder<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>BlastPressure<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
 <p><a href="/Ploder/api/Ploder#Ploder#BlastPressure">Ploder.BlastPressure</a></p>
 </span></span></div><div><code>BlastRadius<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
 <p><a href="/Ploder/api/Ploder#Ploder#BlastRadius">Ploder.BlastRadius</a></p>
@@ -56,14 +56,16 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
 <p><a href="/Ploder/api/Ploder#Ploder#TimeScale">Ploder.TimeScale</a></p>
 </span></span></div><div><code>Visible<!-- -->: </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
 <p><a href="/Ploder/api/Ploder#Ploder#Visible">Ploder.Visible</a></p>
-</span></span></div><div><code>Hit<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/RBXScriptSignal" target="_blank" rel="noopener noreferrer">RBXScriptSignal<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="op_lSLc"> | </code><code class="blue_P4bS">Signal</code><span class="inlineDescription_G7Er">-- <span>
+</span></span></div><div><code>Debug<!-- -->: </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
+<p><a href="/Ploder/api/Ploder#Ploder#Debug">Ploder.Debug</a></p>
+</span></span></div><div><code>Hit<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/RBXScriptSignal" target="_blank" rel="noopener noreferrer">RBXScriptSignal<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="op_lSLc"> | </code><code class="blue_P4bS">Signal</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/BasePart" target="_blank" rel="noopener noreferrer">BasePart,<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="blue_P4bS">number</code><code class="op_lSLc">&gt;</code><span class="inlineDescription_G7Er">-- <span>
 <p><a href="/Ploder/api/Ploder#Ploder#Hit">Ploder.Hit</a></p>
 </span></span></div></div><code>}</code></div><div>
 <p>
   This is what the constructor returns, a table that resembles the normal <a href="https://create.roblox.com/docs/reference/engine/classes/Explosion" target="_blank">Explosion</a>.
   Every single property here is modifiable and can be customised to your liking.
 </p>
-</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="BlastPressure"><code style="text-decoration:none">BlastPressure</code><a href="#BlastPressure" class="hash-link" aria-label="Direct link to BlastPressure" title="Direct link to BlastPressure">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L51"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.<!-- -->BlastPressure<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
+</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="BlastPressure"><code style="text-decoration:none">BlastPressure</code><a href="#BlastPressure" class="hash-link" aria-label="Direct link to BlastPressure" title="Direct link to BlastPressure">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L52"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.<!-- -->BlastPressure<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
 <p>The <strong>BlastPressure</strong> tells the explosion the amount of force to apply on hit parts.</p>
 <div class="admonition admonition-note alert alert--secondary">
   <div class="admonition-heading">
@@ -79,7 +81,7 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
     </ul>
   </div>
 </div>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="BlastRadius"><code style="text-decoration:none">BlastRadius</code><a href="#BlastRadius" class="hash-link" aria-label="Direct link to BlastRadius" title="Direct link to BlastRadius">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L61"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.<!-- -->BlastRadius<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="BlastRadius"><code style="text-decoration:none">BlastRadius</code><a href="#BlastRadius" class="hash-link" aria-label="Direct link to BlastRadius" title="Direct link to BlastRadius">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L62"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.<!-- -->BlastRadius<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
 <p>The <strong>BlastRadius</strong> tells the explosion the amount of range it will have.</p>
 <div class="admonition admonition-note alert alert--secondary">
   <div class="admonition-heading">
@@ -93,7 +95,7 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
     </ul>
   </div>
 </div>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="DestroyJointRadiusPercent"><code style="text-decoration:none">DestroyJointRadiusPercent</code><a href="#DestroyJointRadiusPercent" class="hash-link" aria-label="Direct link to DestroyJointRadiusPercent" title="Direct link to DestroyJointRadiusPercent">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L72"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.<!-- -->DestroyJointRadiusPercent<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="DestroyJointRadiusPercent"><code style="text-decoration:none">DestroyJointRadiusPercent</code><a href="#DestroyJointRadiusPercent" class="hash-link" aria-label="Direct link to DestroyJointRadiusPercent" title="Direct link to DestroyJointRadiusPercent">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L73"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.<!-- -->DestroyJointRadiusPercent<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
 <p>
   The <strong>DestroyJointRadiusPercent</strong> tells the explosion how close a part has to be to be affected by the pressure and get its joints destroyed.
   It should be a value between 0-1. 1 being 100% (it will always destroy no matter the range) and 0.5 being 50% (50% near the explosion or less).
@@ -110,7 +112,7 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
     </ul>
   </div>
 </div>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ExplosionType"><code style="text-decoration:none">ExplosionType</code><a href="#ExplosionType" class="hash-link" aria-label="Direct link to ExplosionType" title="Direct link to ExplosionType">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L82"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.<!-- -->ExplosionType<!-- -->:<!-- --> </code> <code class="blue_P4bS">Enum.ExplosionType</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ExplosionType"><code style="text-decoration:none">ExplosionType</code><a href="#ExplosionType" class="hash-link" aria-label="Direct link to ExplosionType" title="Direct link to ExplosionType">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L83"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.<!-- -->ExplosionType<!-- -->:<!-- --> </code> <code class="blue_P4bS">Enum.ExplosionType</code></div><div>
 <p>The <strong>ExplosionType</strong> defines if the explosion will leave craters behind on terrain.</p>
 <div class="admonition admonition-note alert alert--secondary">
   <div class="admonition-heading">
@@ -124,7 +126,7 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
     </ul>
   </div>
 </div>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Position"><code style="text-decoration:none">Position</code><a href="#Position" class="hash-link" aria-label="Direct link to Position" title="Direct link to Position">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L92"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.<!-- -->Position<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Vector3" target="_blank" rel="noopener noreferrer">Vector3<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Position"><code style="text-decoration:none">Position</code><a href="#Position" class="hash-link" aria-label="Direct link to Position" title="Direct link to Position">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L93"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.<!-- -->Position<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Vector3" target="_blank" rel="noopener noreferrer">Vector3<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
 <p>The <strong>Position</strong> defines the center and origin of the explosion.</p>
 <div class="admonition admonition-note alert alert--secondary">
   <div class="admonition-heading">
@@ -138,7 +140,7 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
     </ul>
   </div>
 </div>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="TimeScale"><code style="text-decoration:none">TimeScale</code><a href="#TimeScale" class="hash-link" aria-label="Direct link to TimeScale" title="Direct link to TimeScale">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L103"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.<!-- -->TimeScale<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="TimeScale"><code style="text-decoration:none">TimeScale</code><a href="#TimeScale" class="hash-link" aria-label="Direct link to TimeScale" title="Direct link to TimeScale">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L104"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.<!-- -->TimeScale<!-- -->:<!-- --> </code> <code class="blue_P4bS">number</code></div><div>
 <p>
   The <strong>TimeScale</strong> defines the speed of the explosion particle (if not using any custom ones).
   This is a value from 0-1. 1 being full speed, 0.5 being half speed and 0 being frozen.
@@ -155,7 +157,7 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
     </ul>
   </div>
 </div>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Visible"><code style="text-decoration:none">Visible</code><a href="#Visible" class="hash-link" aria-label="Direct link to Visible" title="Direct link to Visible">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L114"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.<!-- -->Visible<!-- -->:<!-- --> </code> <code class="blue_P4bS">boolean</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Visible"><code style="text-decoration:none">Visible</code><a href="#Visible" class="hash-link" aria-label="Direct link to Visible" title="Direct link to Visible">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L115"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.<!-- -->Visible<!-- -->:<!-- --> </code> <code class="blue_P4bS">boolean</code></div><div>
 <p>
   The <strong>Visible</strong> boolean defines if any sort of visual effect will occur on explosion.
   If false, no default explosion or custom explosion will be rendered.
@@ -172,7 +174,12 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
     </ul>
   </div>
 </div>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Hit"><code style="text-decoration:none">Hit</code><a href="#Hit" class="hash-link" aria-label="Direct link to Hit" title="Direct link to Hit">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L125"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.<!-- -->Hit<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/RBXScriptSignal" target="_blank" rel="noopener noreferrer">RBXScriptSignal<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="op_lSLc"> | </code><code class="blue_P4bS">Signal</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Debug"><code style="text-decoration:none">Debug</code><a href="#Debug" class="hash-link" aria-label="Direct link to Debug" title="Direct link to Debug">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L122"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.<!-- -->Debug<!-- -->:<!-- --> </code> <code class="blue_P4bS">boolean</code></div><div>
+<p>
+  The <strong>Debug</strong> value is a boolean that indicates whether the explosion will be visualized by a red circle.
+  This is used for debugging and checking the radius of the explosion.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Hit"><code style="text-decoration:none">Hit</code><a href="#Hit" class="hash-link" aria-label="Direct link to Hit" title="Direct link to Hit">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L133"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.<!-- -->Hit<!-- -->:<!-- --> </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/RBXScriptSignal" target="_blank" rel="noopener noreferrer">RBXScriptSignal<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="op_lSLc"> | </code><code class="blue_P4bS">Signal</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/BasePart" target="_blank" rel="noopener noreferrer">BasePart,<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="blue_P4bS">number</code><code class="op_lSLc">&gt;</code></div><div>
 <p>
   The <strong>Hit</strong> event fires whenever a part is caught within the explosion's range.
   It returns the Part and Distance from center to part as parameters.
@@ -189,11 +196,11 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
     </ul>
   </div>
 </div>
-</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="new"><code style="text-decoration:none">new</code><a href="#new" class="hash-link" aria-label="Direct link to new" title="Direct link to new">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L288"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.</code><code class="green_DgR4">new</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Ploder/api/Ploder#Ploder">Ploder</a></code></div><div>
+</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="new"><code style="text-decoration:none">new</code><a href="#new" class="hash-link" aria-label="Direct link to new" title="Direct link to new">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L308"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.</code><code class="green_DgR4">new</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Ploder/api/Ploder#Ploder">Ploder</a></code></div><div>
 <p>Constructs and returns a new explosion.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="newBehavior"><code style="text-decoration:none">newBehavior</code><a href="#newBehavior" class="hash-link" aria-label="Direct link to newBehavior" title="Direct link to newBehavior">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L311"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.</code><code class="green_DgR4">newBehavior</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Ploder/api/PloderBehavior#PloderBehavior">PloderBehavior</a></code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="newBehavior"><code style="text-decoration:none">newBehavior</code><a href="#newBehavior" class="hash-link" aria-label="Direct link to newBehavior" title="Direct link to newBehavior">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L332"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->.</code><code class="green_DgR4">newBehavior</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Ploder/api/PloderBehavior#PloderBehavior">PloderBehavior</a></code></div><div>
 <p>Returns a new <a href="/Ploder/api/PloderBehavior#PloderBehavior">PloderBehavior</a>.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Explode"><code style="text-decoration:none">Explode</code><a href="#Explode" class="hash-link" aria-label="Direct link to Explode" title="Direct link to Explode">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L337"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->:</code><code class="green_DgR4">Explode</code><code>(</code><div class="inset_uKQm"><div><code>Behavior<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Ploder/api/PloderBehavior#PloderBehavior">PloderBehavior?</a></code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Explode"><code style="text-decoration:none">Explode</code><a href="#Explode" class="hash-link" aria-label="Direct link to Explode" title="Direct link to Explode">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L359"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->:</code><code class="green_DgR4">Explode</code><code>(</code><div class="inset_uKQm"><div><code>Behavior<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Ploder/api/PloderBehavior#PloderBehavior">PloderBehavior?</a></code><span class="inlineDescription_G7Er">-- <span>
 <p>The Optional behavior configuration.</p>
 </span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Fires the explosion.</p>
@@ -207,15 +214,15 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
     <p>The explosion will not self-destroy (unless set in the behavior).</p>
   </div>
 </div>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="CalculateDamage"><code style="text-decoration:none">CalculateDamage</code><a href="#CalculateDamage" class="hash-link" aria-label="Direct link to CalculateDamage" title="Direct link to CalculateDamage">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L458"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->:</code><code class="green_DgR4">CalculateDamage</code><code>(</code><div class="inset_uKQm"><div><code>Position<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/BasePart" target="_blank" rel="noopener noreferrer">BasePart<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="op_lSLc"> | </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Vector3" target="_blank" rel="noopener noreferrer">Vector3<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="CalculateDamage"><code style="text-decoration:none">CalculateDamage</code><a href="#CalculateDamage" class="hash-link" aria-label="Direct link to CalculateDamage" title="Direct link to CalculateDamage">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L495"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->:</code><code class="green_DgR4">CalculateDamage</code><code>(</code><div class="inset_uKQm"><div><code>Position<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/BasePart" target="_blank" rel="noopener noreferrer">BasePart<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="op_lSLc"> | </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Vector3" target="_blank" rel="noopener noreferrer">Vector3<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>The part or position to calculate from.</p>
 </span></span></div><div><code>Damage<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/NumberRange" target="_blank" rel="noopener noreferrer">NumberRange<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
 <p>The min and max damage.</p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
-<p>The calculated damage represented ny a number</p>
+<p>The calculated damage represented by a number</p>
 </span></span></div><div>
 <p>Calculates the damage based on the distance of the position.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Destroy"><code style="text-decoration:none">Destroy</code><a href="#Destroy" class="hash-link" aria-label="Direct link to Destroy" title="Direct link to Destroy">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L480"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->:</code><code class="green_DgR4">Destroy</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Destroy"><code style="text-decoration:none">Destroy</code><a href="#Destroy" class="hash-link" aria-label="Direct link to Destroy" title="Direct link to Destroy">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/denispionicul/Ploder/blob/main/src/init.lua#L517"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Ploder<!-- -->:</code><code class="green_DgR4">Destroy</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Destroys the ploder.</p>
 </div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
     &quot;functions&quot;: [
@@ -231,7 +238,7 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 288,
+                &quot;line&quot;: 308,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -247,7 +254,7 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 311,
+                &quot;line&quot;: 332,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -264,7 +271,7 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
             &quot;returns&quot;: [],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 337,
+                &quot;line&quot;: 359,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -285,13 +292,13 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
             ],
             &quot;returns&quot;: [
                 {
-                    &quot;desc&quot;: &quot;The calculated damage represented ny a number&quot;,
+                    &quot;desc&quot;: &quot;The calculated damage represented by a number&quot;,
                     &quot;lua_type&quot;: &quot;number&quot;
                 }
             ],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 458,
+                &quot;line&quot;: 495,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -302,7 +309,7 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
             &quot;returns&quot;: [],
             &quot;function_type&quot;: &quot;method&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 480,
+                &quot;line&quot;: 517,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         }
@@ -313,7 +320,7 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
             &quot;desc&quot;: &quot;The **BlastPressure** tells the explosion the amount of force to apply on hit parts.\n\n:::note\n* The **BlastPressure** only applies if a part isn&#x27;t anchored and not welded.\n* The **BlastPressure** only applies if the [Ploder.DestroyJointRadiusPercent] requirement is met.\n* The **BlastPressure** is the same as the [Explosion BlastPressure](https://create.roblox.com/docs/reference/engine/classes/Explosion#BlastPressure)\n:::&quot;,
             &quot;lua_type&quot;: &quot;number&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 51,
+                &quot;line&quot;: 52,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -322,7 +329,7 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
             &quot;desc&quot;: &quot;The **BlastRadius** tells the explosion the amount of range it will have.\n\n:::note\n* The **BlastRadius** is the same as the [Explosion BlastRadius](https://create.roblox.com/docs/reference/engine/classes/Explosion#BlastRadius)\n:::&quot;,
             &quot;lua_type&quot;: &quot;number&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 61,
+                &quot;line&quot;: 62,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -331,7 +338,7 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
             &quot;desc&quot;: &quot;The **DestroyJointRadiusPercent** tells the explosion how close a part has to be to be affected by the pressure and get its joints destroyed.\nIt should be a value between 0-1. 1 being 100% (it will always destroy no matter the range) and 0.5 being 50% (50% near the explosion or less).\n\n:::note\n* The **DestroyJointRadiusPercent** is the same as the [Explosion DestroyJointRadiusPercent](https://create.roblox.com/docs/reference/engine/classes/Explosion#DestroyJointRadiusPercent)\n:::&quot;,
             &quot;lua_type&quot;: &quot;number&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 72,
+                &quot;line&quot;: 73,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -340,7 +347,7 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
             &quot;desc&quot;: &quot;The **ExplosionType** defines if the explosion will leave craters behind on terrain.\n\n:::note\n* The **ExplosionType** is the same as the [Explosion ExplosionType](https://create.roblox.com/docs/reference/engine/classes/Explosion#ExplosionType)\n:::&quot;,
             &quot;lua_type&quot;: &quot;Enum.ExplosionType&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 82,
+                &quot;line&quot;: 83,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -349,7 +356,7 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
             &quot;desc&quot;: &quot;The **Position** defines the center and origin of the explosion.\n\n:::note\n* The **Position** is the same as the [Explosion Position](https://create.roblox.com/docs/reference/engine/classes/Explosion#Position)\n:::&quot;,
             &quot;lua_type&quot;: &quot;Vector3&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 92,
+                &quot;line&quot;: 93,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -358,7 +365,7 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
             &quot;desc&quot;: &quot;The **TimeScale** defines the speed of the explosion particle (if not using any custom ones).\nThis is a value from 0-1. 1 being full speed, 0.5 being half speed and 0 being frozen.\n\n:::note\n* The **TimeScale** is the same as the [Explosion TimeScale](https://create.roblox.com/docs/reference/engine/classes/Explosion#TimeScale)\n:::&quot;,
             &quot;lua_type&quot;: &quot;number&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 103,
+                &quot;line&quot;: 104,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
@@ -367,16 +374,25 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
             &quot;desc&quot;: &quot;The **Visible** boolean defines if any sort of visual effect will occur on explosion.\nIf false, no default explosion or custom explosion will be rendered.\n\n:::note\n* The **Visible** is the same as the [Explosion Visible](https://create.roblox.com/docs/reference/engine/classes/Explosion#Visible)\n:::&quot;,
             &quot;lua_type&quot;: &quot;boolean&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 114,
+                &quot;line&quot;: 115,
+                &quot;path&quot;: &quot;src/init.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Debug&quot;,
+            &quot;desc&quot;: &quot;The **Debug** value is a boolean that indicates whether the explosion will be visualized by a red circle.\nThis is used for debugging and checking the radius of the explosion.&quot;,
+            &quot;lua_type&quot;: &quot;boolean&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 122,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         },
         {
             &quot;name&quot;: &quot;Hit&quot;,
             &quot;desc&quot;: &quot;The **Hit** event fires whenever a part is caught within the explosion&#x27;s range.\nIt returns the Part and Distance from center to part as parameters.\n\n:::note\n* The **Hit** is the same as the [Explosion Hit](https://create.roblox.com/docs/reference/engine/classes/Explosion#Hit)\n:::&quot;,
-            &quot;lua_type&quot;: &quot;RBXScriptSignal | Signal&quot;,
+            &quot;lua_type&quot;: &quot;RBXScriptSignal | Signal&lt;BasePart, number&gt;&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 125,
+                &quot;line&quot;: 133,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         }
@@ -422,13 +438,18 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
                     &quot;desc&quot;: &quot;[Ploder.Visible]&quot;
                 },
                 {
+                    &quot;name&quot;: &quot;Debug&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;,
+                    &quot;desc&quot;: &quot;[Ploder.Debug]&quot;
+                },
+                {
                     &quot;name&quot;: &quot;Hit&quot;,
-                    &quot;lua_type&quot;: &quot;RBXScriptSignal | Signal&quot;,
+                    &quot;lua_type&quot;: &quot;RBXScriptSignal | Signal&lt;BasePart, number&gt;&quot;,
                     &quot;desc&quot;: &quot;[Ploder.Hit]&quot;
                 }
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 201,
+                &quot;line&quot;: 218,
                 &quot;path&quot;: &quot;src/init.lua&quot;
             }
         }
@@ -436,11 +457,11 @@ We will get to the custom features later."><link data-rh="true" rel="canonical" 
     &quot;name&quot;: &quot;Ploder&quot;,
     &quot;desc&quot;: &quot;Ploder is a module that is designed to make custom explosions easy to make.\nTo get started, simply require the module and construct it.\n\n```lua\nlocal Ploder = require(Path.Ploder)\n\nlocal Explosion = Ploder.new()\n```\n\nOn its own, the constructor and ploder for that matter functions exactly like the normal [Explosion](https://create.roblox.com/docs/reference/engine/classes/Explosion).\nWe will get to the custom features later.&quot;,
     &quot;source&quot;: {
-        &quot;line&quot;: 29,
+        &quot;line&quot;: 30,
         &quot;path&quot;: &quot;src/init.lua&quot;
     }
-}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#Ploder" class="table-of-contents__link toc-highlight">Ploder</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#BlastPressure" class="table-of-contents__link toc-highlight">BlastPressure</a></li><li><a href="#BlastRadius" class="table-of-contents__link toc-highlight">BlastRadius</a></li><li><a href="#DestroyJointRadiusPercent" class="table-of-contents__link toc-highlight">DestroyJointRadiusPercent</a></li><li><a href="#ExplosionType" class="table-of-contents__link toc-highlight">ExplosionType</a></li><li><a href="#Hit" class="table-of-contents__link toc-highlight">Hit</a></li><li><a href="#Position" class="table-of-contents__link toc-highlight">Position</a></li><li><a href="#TimeScale" class="table-of-contents__link toc-highlight">TimeScale</a></li><li><a href="#Visible" class="table-of-contents__link toc-highlight">Visible</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#CalculateDamage" class="table-of-contents__link toc-highlight">:CalculateDamage</a></li><li><a href="#Destroy" class="table-of-contents__link toc-highlight">:Destroy</a></li><li><a href="#Explode" class="table-of-contents__link toc-highlight">:Explode</a></li><li><a href="#new" class="table-of-contents__link toc-highlight">.new</a></li><li><a href="#newBehavior" class="table-of-contents__link toc-highlight">.newBehavior</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 denispionicul. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
-<script src="/Ploder/assets/js/runtime~main.fd64b82d.js"></script>
-<script src="/Ploder/assets/js/main.a51376ea.js"></script>
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#Ploder" class="table-of-contents__link toc-highlight">Ploder</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#BlastPressure" class="table-of-contents__link toc-highlight">BlastPressure</a></li><li><a href="#BlastRadius" class="table-of-contents__link toc-highlight">BlastRadius</a></li><li><a href="#Debug" class="table-of-contents__link toc-highlight">Debug</a></li><li><a href="#DestroyJointRadiusPercent" class="table-of-contents__link toc-highlight">DestroyJointRadiusPercent</a></li><li><a href="#ExplosionType" class="table-of-contents__link toc-highlight">ExplosionType</a></li><li><a href="#Hit" class="table-of-contents__link toc-highlight">Hit</a></li><li><a href="#Position" class="table-of-contents__link toc-highlight">Position</a></li><li><a href="#TimeScale" class="table-of-contents__link toc-highlight">TimeScale</a></li><li><a href="#Visible" class="table-of-contents__link toc-highlight">Visible</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#CalculateDamage" class="table-of-contents__link toc-highlight">:CalculateDamage</a></li><li><a href="#Destroy" class="table-of-contents__link toc-highlight">:Destroy</a></li><li><a href="#Explode" class="table-of-contents__link toc-highlight">:Explode</a></li><li><a href="#new" class="table-of-contents__link toc-highlight">.new</a></li><li><a href="#newBehavior" class="table-of-contents__link toc-highlight">.newBehavior</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 denispionicul. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
+<script src="/Ploder/assets/js/runtime~main.ef0a5e84.js"></script>
+<script src="/Ploder/assets/js/main.076b3fad.js"></script>
 </body>
 </html>
