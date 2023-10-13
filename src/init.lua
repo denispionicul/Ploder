@@ -1,8 +1,8 @@
---!nonstrict
---Version 1.1.0
+--!nocheck
+--Version 1.2.0
 
 -- Settings
-local Debug = true
+local Debug = true -- ths does nothing at the moment
 
 -- Services
 local Debris = game:GetService("Debris")
@@ -10,6 +10,7 @@ local Debris = game:GetService("Debris")
 -- Dependencies
 local Signal = require(script.Parent:FindFirstChild("Signal") or script.Signal)
 local Trove = require(script.Parent:FindFirstChild("Trove") or script.Trove)
+local Option = require(script.Parent:FindFirstChild("Option") or script.Option)
 
 --[=[
 	@class Ploder
@@ -112,7 +113,14 @@ Ploder.__index = Ploder
 	:::
 ]=]
 --[=[
-	@prop Hit RBXScriptSignal | Signal
+	@prop Debug boolean
+	@within Ploder
+
+	The **Debug** value is a boolean that indicates whether the explosion will be visualized by a red circle.
+	This is used for debugging and checking the radius of the explosion.
+]=]
+--[=[
+	@prop Hit RBXScriptSignal | Signal<BasePart, number>
 	@within Ploder
 
 	The **Hit** event fires whenever a part is caught within the explosion's range.
@@ -180,6 +188,14 @@ Ploder.__index = Ploder
 
 	If not nil, the [Ploder] will destroy itself after exploding and waiting for the amount of time given.
 ]=]
+--[=[
+	@prop Tags {[string]: (Hit: BasePart, Distance: number) -> nil}
+	@within PloderBehavior
+
+	This is a dictionary that has a string for keys and a function as the value.
+	Whenever ploder hits a part, it will check if it has a tag (with CollectionService) from inside this table.
+	If it does, it will call the function associated with the tag inside the table, and will return the part and distance.
+]=]
 
 --[=[
 	@interface Ploder
@@ -192,8 +208,9 @@ Ploder.__index = Ploder
 	.Position Vector3 -- [Ploder.Position]
 	.TimeScale number -- [Ploder.TimeScale]
 	.Visible boolean -- [Ploder.Visible]
+	.Debug boolean -- [Ploder.Debug]
 
-	.Hit RBXScriptSignal | Signal -- [Ploder.Hit]
+	.Hit RBXScriptSignal | Signal<BasePart, number> -- [Ploder.Hit]
 
 	This is what the constructor returns, a table that resembles the normal [Explosion](https://create.roblox.com/docs/reference/engine/classes/Explosion).
 	Every single property here is modifiable and can be customised to your liking.
@@ -211,11 +228,12 @@ Ploder.__index = Ploder
 	.AffectBlastPressureDistance boolean -- [PloderBehavior.AffectBlastPressureDistance]
 	.CustomExplosion (Folder | { ParticleEmitter })? -- [PloderBehavior.CustomExplosion]
 	.AutoDestroy number? -- [PloderBehavior.AutoDestroy]
+	.Tags {[string]: (Hit: BasePart, Distance: number) -> nil} -- [PloderBehavior.Tags]
 
 	This is what the behavior looks like. Everything can be customised.
 ]=]
 
-type self = {
+export type Ploder = {
 	BlastPressure: number,
 	BlastRadius: number,
 	DestroyJointRadiusPercent: number,
@@ -223,13 +241,14 @@ type self = {
 	Position: Vector3,
 	TimeScale: number,
 	Visible: boolean,
+	Debug: boolean,
 
-	Hit: RBXScriptSignal | Signal,
+	Hit: RBXScriptSignal | Signal.Signal<BasePart, number>,
 
-	_Trove: { [any]: any },
+	Explode: (self: Ploder, Behavior: PloderBehavior, Position: Vector3?) -> nil,
+	CalculateDamage: (self: Ploder, Position: BasePart | Vector3, Damage: NumberRange) -> number,
+	Destroy: (self: Ploder) -> nil
 }
-
-export type Ploder = typeof(setmetatable({} :: self, Ploder))
 
 export type PloderBehavior = {
 	RayCastOnly: boolean,
@@ -241,6 +260,7 @@ export type PloderBehavior = {
 	AffectBlastPressureDistance: boolean,
 	CustomExplosion: (Folder | { ParticleEmitter })?,
 	AutoDestroy: number?,
+	Tags: {[string]: (Hit: BasePart, Distance: number) -> nil}
 }
 
 local function ApplyPressure(
@@ -299,6 +319,7 @@ function Ploder.new(): Ploder
 	self.Position = Vector3.zero
 	self.TimeScale = 0.5
 	self.Visible = true
+	self.Debug = false
 
 	self.Hit = self._Trove:Construct(Signal)
 
@@ -319,6 +340,7 @@ function Ploder.newBehavior(): PloderBehavior
 		AffectBlastPressureDistance = false,
 		CustomExplosion = nil,
 		AutoDestroy = nil,
+		Tags = {}
 	}
 end
 
@@ -334,11 +356,14 @@ end
 	The explosion will not self-destroy (unless set in the behavior).
 	:::
 ]=]
-function Ploder.Explode(self: Ploder, Behavior: PloderBehavior?)
+function Ploder.Explode(self: Ploder, Behavior: PloderBehavior?, Position: Vector3?)
+	self.Position = Position or self.Position
+
 	local CurrentPosition: Vector3 = self.Position
 	local BlastPressurePercent: number? = Behavior and Behavior.BlastPressurePercent
 	local CustomExplosion: ({ Particle: ParticleEmitter } | Folder)? = Behavior and Behavior.CustomExplosion
 	local AutoDestroy: number? = Behavior and Behavior.AutoDestroy
+	local Tags = Behavior and Behavior.Tags
 
 	local Result: { Part: BasePart } =
 		workspace:GetPartBoundsInRadius(CurrentPosition, self.BlastRadius, Behavior and Behavior.OverlapParam)
@@ -351,9 +376,9 @@ function Ploder.Explode(self: Ploder, Behavior: PloderBehavior?)
 		if Behavior then
 			if Behavior.RayCastOnly then
 				local RayResult =
-					workspace:Raycast(CurrentPosition, Direction * self.BlastRadius, Behavior.RayCastParams)
+					Option.Wrap(workspace:Raycast(CurrentPosition, Direction * self.BlastRadius, Behavior.RayCastParams))
 
-				if not RayResult or not RayResult.Instance or RayResult.Instance ~= Hit then
+				if RayResult:IsNone() or not RayResult:Unwrap(RayResult).Instance or RayResult:Unwrap(RayResult).Instance ~= Hit then
 					continue
 				end
 			end
@@ -376,6 +401,18 @@ function Ploder.Explode(self: Ploder, Behavior: PloderBehavior?)
 
 		if BlastPressurePercent and Percentage <= Behavior.BlastPressurePercent then
 			ApplyPressure(Hit, Direction, Percentage, self, Behavior)
+		end
+
+		if Tags then
+			for _, Tag: string in Hit:GetTags() do
+				local TagFunc = Tags[Tag]
+
+				if TagFunc then
+					task.defer(function()
+						TagFunc(Hit, Magnitude)
+					end)
+				end
+			end
 		end
 
 		self.Hit:Fire(Hit, Magnitude)
@@ -430,7 +467,7 @@ function Ploder.Explode(self: Ploder, Behavior: PloderBehavior?)
 		end)
 	end
 
-	if Debug then
+	if self.Debug then
 		local Part = self._Trove:Add(Instance.new("Part"))
 		Part.Anchored = true
 		Part.CanCollide = false
@@ -452,7 +489,7 @@ end
 	@param Position BasePart | Vector3 -- The part or position to calculate from.
 	@param Damage NumberRange -- The min and max damage.
 
-	@return number -- The calculated damage represented ny a number
+	@return number -- The calculated damage represented by a number
 	Calculates the damage based on the distance of the position.
 ]=]
 function Ploder.CalculateDamage(self: Ploder, Position: BasePart | Vector3, Damage: NumberRange): number

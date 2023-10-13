@@ -40,6 +40,9 @@
       },
       "Test": {
         "$path": "test/Explosion.server.lua"
+      },
+      "Tags": {
+        "$path": "test/Tags.lua"
       }
     },
     "Lighting": {

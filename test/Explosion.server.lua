@@ -6,13 +6,14 @@ local Explosion = Ploder.new()
 
 Explosion.BlastPressure = 1000
 Explosion.DestroyJointRadiusPercent = 1
+Explosion.Debug = true
 
 local Behavior = Ploder.newBehavior()
 
 Behavior.AffectBlastPressureDistance = true
-Behavior.CustomExplosion = workspace.Particles
+Behavior.Tags = require(script.Parent.Tags)
 
-Explosion.Hit:Connect(function(Hit: BasePart)
+Explosion.Hit:Connect(function(Hit)
     print(Hit.Name .. " got hit")
 end)
 
