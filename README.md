@@ -1,3 +1,5 @@
+# THIS MODULE HAS BEEN MOVED [HERE](https://github.com/denispionicul/Stardust)
+
 # Ploder
 Ploder is a module that helps create custom explosions easily, with a ton of customisation on your hands.
 
